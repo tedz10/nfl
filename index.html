@@ -8,10 +8,40 @@
 	<link rel="stylesheet" href="css/style.css">
 	<title>NFL Project</title>
 
+
+	<script type="text/javascript" src="./lib/d3.v4.js" charset="utf-8"></script>
+	<link href="https://fonts.googleapis.com/css?family=Poppins|Raleway|Roboto+Mono|Varela+Round" rel="stylesheet">
+	<script src="./lib/prism.js" charset="utf-8"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+	<script src="//d3js.org/d3-geo-projection.v1.min.js"></script>
+	<script src="./lib/topojson.min.js"></script>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+	<!-- tomorrow  dark-->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+	<script>
+        hljs.initHighlightingOnLoad();
+	</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- load scripts -->
+	<script src="./js/newinitialisation.js"></script>
+	<script src="./js/color_labels.js"></script>
+	<script src="./js/fade.js"></script>
+	<script src="./js/focus_pointupdate.js"></script>
+
+	<script src="./js/geo_map.js"></script>
+	<script src="./js/animation_controlupdate.js"></script>
+
+	<script src="./js/tracesupdate.js"></script>
+	<script src="./js/generate_visupdate.js"></script>
+
 </head>
 
 
 <body>
+
+
+
 
 
 	<div class="parallax" id = "p0">
@@ -74,10 +104,18 @@
 
 		<div class="container-fluid">
 			<div class="row">
-				<div class = "col-md-2">
+				<div class = "col-md-3">
 
 				</div>
 				<div class="col-md-6">
+
+					<aside class="pquote">
+						<blockquote>
+							<p class = "pquote">“There are no shortcuts to building a team each season. You build the foundation brick by brick” - Bill Belichick</p>
+						</blockquote>
+					</aside>
+					<br>
+
 					<p>While various NFL teams and coaches hold different football philosophies on how to play
 						the game, each organization ultimately has the same goal – to win games and make the
 						playoffs. </p>
@@ -87,19 +125,19 @@
 					<p>To uncover the secrets of building a playoff caliber team, we collected data on all 32 teams
 						from 2010 to 2017 and crafted a decision tree to see which features were critical to a winning team.
 				</div>
-				<div class = "col-md-4">
-					<aside class="pquote">
-						<blockquote>
-							<p class = "pquote">“There are no shortcuts to building a team each season. You build the foundation brick by brick” - Bill Belichick</p>
-						</blockquote>
-					</aside>
+				<div class = "col-md-3">
+
 				</div>
 
 				<br>
 
 			</div>
 
-			<hr class = "full">
+			<!--<hr class = "full">-->
+			<br>
+			<br>
+			<br>
+			<br>
 			<br>
 
 
@@ -108,7 +146,7 @@
 				<h3>FINDING PREDICTORS</h3>
 				<p>Click each node of the tree to see how a specific statistic relates to a team's playoff chances</p>
 				<div class="row">
-						<div class="col-md-12" id= "treeLegend"></div>
+						<div class="col-md-12" id = "treeLegend"></div>
 					<div class="row">
 						<div class="col-md-12" id = "tree"></div>
 					</div>
@@ -165,25 +203,42 @@
 				<div class = "col-md-3">
 
 				</div>
-		<div class="container-fluid">
-
-
-			<!-- Visualization placeholders -->
-
-			<!--<div id="timeline"></div>-->
-			<div class="row">
-				<div class="col-md-6">
-					<div id="stacked-area-chart"></div>
-				</div>
-				<div class="col-md-6">
-					<div id="stacked-area-chart2"></div>
-				</div>
 			</div>
+				<div class="container-fluid">
 
-		</div>
+					<h5>Mouse over an area to see what type of points were scored.</h5>
+					<!-- Visualization placeholders -->
+
+					<!--<div id="timeline"></div>-->
+					<div class="row">
+						<div class="col-md-6">
+							<div id="stacked-area-chart"></div>
+						</div>
+						<div class="col-md-6">
+							<div id="stacked-area-chart2"></div>
+						</div>
+					</div>
+
+				</div>
 
 
-			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		</div>
 
@@ -221,7 +276,7 @@
 
 					</div>
 					<div class="col-md-6 left">
-						<br>
+						<!--<br>-->
 						<aside class="pquote">
 							<blockquote>
 								<p class = "pquote">“Offense sells tickets, but defense wins championships.”
@@ -229,17 +284,16 @@
 							</blockquote>
 						</aside>
 						<br>
-						<br>exa
+						<!--<br>-->
 						<br>
 
-						<p>The adage "defense wins championships" may not necessarily hold in our decision tree. However
+						<p>The age-old adage "defense wins championships" may not necessarily hold in our decision tree. However
 							, defense is the second most important attribute in our decision tree. Teams that let up
 							more offensive yards were far less likely to make the playoffs. </p>
 
 						<p>In 2016, the Denver Broncos allowed significantly fewer yards than any other NFL team.
-						</p>
-						<p>Despite analysts clamoring over high-powered offenses such as Carolina and New England,
-							the Denver Defense led the organization to a success 12 - 4 record.
+							Despite analysts clamoring over high-powered offenses such as Carolina and New England,
+							the Denver defense led the organization to a success 12 - 4 record.
 						</p>
 						<p>
 							On their path through the playoffs, the defense held steadfast against both the Patriots
@@ -253,11 +307,11 @@
 					</div>
 					<div class="container-fluid">
 				<div class="row">
-					<div class="col-md-3" id= "text1">
+					<div class="col-md-3">
 					</div>
 					<div class="col-md-6 att1" id = "chart-area">
 					</div>
-					<div class="col-md-3" id= "text1">
+					<div class="col-md-3">
 					</div>
 				</div>
 
@@ -265,7 +319,7 @@
 						<br>
 						<br>
 
-				<h4 id = "specific_name">Click data point to see team specific details</h4>
+				<h5 id = "specific_name">Mouse over a data point to see team specific details</h5>
 			</div>
 			<div class="row">
 				<!--<div class="col-md-3 att1" id = "chart1">-->
@@ -323,7 +377,7 @@
 	<div class = "info">
 
 		<h2>FACTOR 3: A STRONG RUN GAME</h2>
-		<p>A stout defense and a strong run game are generally regarded as the keys to any successful championship team. There is huge value in secure yards and controlling the clock, and our decision tree agrees. </p>
+		<!--<p>A stout defense and a strong run game are generally regarded as the keys to any successful championship team. There is huge value in secure yards and controlling the clock, and our decision tree agrees. </p>-->
 		<hr>
 
 		<div class="container-fluid">
@@ -340,6 +394,7 @@
 							</p>
 						</blockquote>
 					</aside>
+					<br>
 					<p>The NFL has emerged into a pass-heavy game, much more so than the history of the league has ever seen.
 						While passing records continue to fall with the incorporation of faster, spread offense, perhaps the run game is getting overlooked as the true key to success.
 					</p>
@@ -349,6 +404,8 @@
 					<p>
 						Despite pundits and players’ declarations that year that the NFL “is a passing league now”, the Seahawks’ rushing power led them all the way to a second consecutive Super Bowl appearance that year.
 					</p>
+					<br>
+					<br>
 					<!--<p>To uncover the secrets of building a playoff caliber team, we collected data on all 32 teams-->
 					<!--from 2010 to 2017 and crafted a decision tree to see which features were critical to a winning team.-->
 				</div>
@@ -386,8 +443,11 @@
 
 			<div id = "info4"></div>
 
+		<br>
+		<br>
 	<div class = "rushInfo" >
 		<h4>Rushing By The Numbers</h4>
+		<p>Click a column name to rearrange the table by that statistic. </p>
 		<div   id="tableClear">
 			<div class = "row">
 				<div class="rushingTable col-md-4" id="nfcTable"></div>
@@ -407,9 +467,9 @@
 
 	<div class = "info" id = "info6">
 		<h2>FACTOR 4: TURNOVER DIFFERENTIAL</h2>
-		A team needs the balls in their hands to score and win games. Likewise, the most successful teams are those that can hang on to the ball and take it away from their opponents.
+		<!--A team needs the balls in their hands to score and win games. Likewise, the most successful teams are those that can hang on to the ball and take it away from their opponents.-->
 		<hr>
-		<br>
+		<!--<br>-->
 
 		<div class="container-fluid">
 			<div class="row">
@@ -424,7 +484,7 @@
 
 						</blockquote>
 					</aside>
-					<br>
+					<!--<br>-->
 					<br>
 					<p>In Superbowl 49, Malcolm Butler iconically picked up Russell WIlson on the goal line
 						to seal the Patriots’ 24-21 victory over the Seahawks. Needless to say, big plays such as
@@ -507,7 +567,7 @@
 					<div class="col-md-2">
 					</div>
 					<div class="col-md-5">
-						<h3 id = "specific_name2">Click Bars for Info</h3>
+						<h3 id = "specific_name2">Click a Bar for More Info</h3>
 						<table style="width:100%" class="table sortable" id="mytable">
 							<thead>
 							<tr>
@@ -609,10 +669,41 @@
 
 			</div>
 
+		</div>
 
 
 
+		<div id="bubble_div">
+			<h2>Hello.</h2>
+			<div style="display:table;box-sizing:border-box;width:100%;">
 
+
+			</div>
+			<div class="map">
+				<div id="bubble_chart_div" style="height:70%">
+					<script src="./js/mainupdate.js">
+
+					</script>
+				</div>
+
+				<div style="display: table;box-sizing:border-box;width:100%;">
+					<div class="play_btn">
+						<input type="button" id="play_btn" value="Start" style="font-size:50px;width:50px;height:100px" onclick="play_btn()" />
+					</div>
+					<div id="slider_div" class="time_line">
+					</div>
+					<div style="display: table;box-sizing:border-box;width:100%;">
+						<div style="float:left;margin-left:55px;width:40%;height:50%;">
+							<br>
+							<!--<input id='trace_checkBox'>-->
+							<input id='line_checkBox'>
+							<br><br>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
 
 		</div>
 
@@ -630,10 +721,11 @@
 	<script src="js/main.js"></script>
 	<script src="js/linegraph.js"></script>
 	<script src="js/barchart.js"></script>
-	<script src = "js/tree.js"></script>
+	<script src="js/tree.js"></script>
 	<script src="js/rushing.js"></script>
 	<script src="js/stackedAreaChart.js"></script>
 	<script src="js/turnover.js"></script>
+
 	<!--<script src="//d3js.org/d3.v3.min.js"></script>-->
 	<!--<script src="js/slider.js"></script>-->
 </body>

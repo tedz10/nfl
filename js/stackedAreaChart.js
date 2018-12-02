@@ -107,6 +107,7 @@ StackedAreaChart.prototype.initVis = function(){
         .attr("x", vis.width/2)
         .attr("y", 0)
         .text(vis.title)
+        .attr("class", "area-title")
         .attr("text-anchor", "middle");
 
 
@@ -127,7 +128,7 @@ StackedAreaChart.prototype.wrangleData = function(){
 
 	// Update the visualization
     vis.updateVis();
-}
+};
 
 
 
@@ -162,12 +163,28 @@ StackedAreaChart.prototype.updateVis = function(){
             return colorScale(dataCategories[i]);
         })
         .attr("d", function(d) {
+            console.log(d)
             return vis.area(d);
         })
         .on("mouseover", function(d){
             // console.log(d)
-            vis.svg.selectAll(".tip_id")
-                .text(d.key);
+            if (d.key === "xp") {
+                vis.svg.selectAll(".tip_id")
+                    .text("Extra points");
+            } else if (d.key === "touchdowns") {
+                vis.svg.selectAll(".tip_id")
+                    .text("Touchdowns");
+            }
+            else if (d.key === "safety") {
+                vis.svg.selectAll(".tip_id")
+                    .text("Safety");
+            } else if (d.key === "fieldgoals") {
+                vis.svg.selectAll(".tip_id")
+                    .text("Field Goals");
+            }
+
+            // vis.svg.selectAll(".tip_id")
+            //     .text(d.key);
         });
 
 

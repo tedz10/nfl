@@ -142,7 +142,7 @@ Turnover.prototype.updateVis = function() {
                 .style("left", d3.event.pageX - 50 + "px")
                 .style("top", d3.event.pageY - 70 + "px")
                 .style("display", "inline-block")
-                .html((d.Teams) + "<br>"  + (d.Turnover_Differential));
+                .html(("Team: " + d.Teams) + "<br>"  + "Turnover Diff.: " + (d.Turnover_Differential));
         })
         .on("mouseout", function(d){ tooltip.style("display", "none");})
 
