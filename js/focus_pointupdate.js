@@ -1,14 +1,14 @@
 function initialize_focus_point() {
     // append the focus lines
-    focus_line = d3.select("#bubble_chart").append("g")
+    focus_line = d3.select("#bubble_div").append("g")
         .attr("class", "focus_line")
         .style("display", "none")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-    vertical_line = focus_line.append("line")
-        .attr("class", "hover-line")
-    horizontal_line = focus_line.append("line")
-        .attr("class", "hover-line")
+    //
+    // vertical_line = focus_line.append("line")
+    //     .attr("class", "hover-line")
+    // horizontal_line = focus_line.append("line")
+    //     .attr("class", "hover-line")
 
     // append focus tip text
     focus_tip = d3.select('#bubble_div')
@@ -30,16 +30,16 @@ function draw_focus_line(circle_data) {
     var r = rScale(+circle_data.Total_Wins);
 
     // set the start point and end point of vertical line 
-    vertical_line.attr("x1", cx)
-        .attr("y1", cy)
-        .attr("x2", cx)
-        .attr("y2", svg_height)
-
-    //set the start point and end point of horizontal line
-    horizontal_line.attr("x1", 0)
-        .attr("y1", cy)
-        .attr("x2", cx)
-        .attr("y2", cy)
+    // vertical_line.attr("x1", cx)
+    //     .attr("y1", cy)
+    //     .attr("x2", cx)
+    //     .attr("y2", svg_height)
+    //
+    // //set the start point and end point of horizontal line
+    // horizontal_line.attr("x1", 0)
+    //     .attr("y1", cy)
+    //     .attr("x2", cx)
+    //     .attr("y2", cy)
 
 
     focus_tip.style("left", d3.event.pageX + "px")

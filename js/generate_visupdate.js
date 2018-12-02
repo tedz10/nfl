@@ -90,12 +90,12 @@ function generateVis() {
 
         })
         .on('mouseover', function(d, i) {
-
+            console.log("sdfsdfsdf")
             // when the status is paused, the focus line can be draw.
             if (!play_status) {
 
                 // fade(d.Region);
-                focus_line.style("display", null);
+                // focus_line.style("display", null);
 
                 // old version with g element.. now it make no sense...~~~
                 // get circle's parent g's transform position

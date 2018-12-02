@@ -221,6 +221,16 @@ body, html {
   color: #616161;
 }
 
+div {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 500;
+  color: #616161;
+  font-size: 12px;
+}
+
+
+
+
 .info {
   color: #777;
   background-color:white;
@@ -494,6 +504,15 @@ blockquote {
     line-height: 40px;
     width: 70%;
   }
+}
+
+
+#scatter {
+  /*margin: 0 auto;*/
+  /*width: 1500px;*/
+  /*position: relative;*/
+  /*top: 50%;*/
+  /*transform: perspective(1px) translateY(-50%);*/
 }
 
 

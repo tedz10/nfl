@@ -1,6 +1,6 @@
 
 // Define margins
-var margin = { top: 10, right: 500, bottom: 60, left: 60 };
+var margin = { top: 10, right: 300, bottom: 60, left: 100 };
 
 var label_svg = { width: 130, height: 210, padding: 20, side: 20, margin_top: 30 };
 
@@ -47,9 +47,9 @@ colors_areas = {
 
 
 //Create SVG element as a group with the margins transform applied to it
-var svg = d3.select("#bubble_chart_div")
+var svgOff = d3.select("#bubble_chart_div")
     .append("svg")
-    .attr("id", "bubble_chart")
+    // .attr("id", "bubble_chart")
     // .attr("width", svg_width + margin.left*1.3)
     // .attr("height", svg_height + margin.top + margin.bottom)
     // .attr("transform", "scale(0.7)")

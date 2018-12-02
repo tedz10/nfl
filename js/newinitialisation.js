@@ -24,27 +24,27 @@ function initialize_axis() {
     x_max = d3.max(dataset.map(function(d) { return +d.Offensive_Yards_Allowed; }));
 
     // Call axes
-    svg.append("g")
+    svgOff.append("g")
         .attr("class", "axis")
         .attr("id", "y-axis");
 
-    svg.append("g")
+    svgOff.append("g")
         .attr("class", "axis")
         .attr("id", "x-axis")
         .attr("transform", "translate(0," + (svg_height) + ")");
 
-    svg.append("g")
+    svgOff.append("g")
         .attr("class", "axis")
         .call(topAxis);
 
-    svg.append("g")
+    svgOff.append("g")
         .attr("class", "axis")
         .attr("transform", "translate(" + (svg_width) + ",0)")
         .call(rightAxis);
 
 
     //x_ticks = [4000, 5000, 5500, 6000,6500,  7000, 7500, 8000, 8500, 9000, 10000, 12000, 14000];
-    x_ticks = [5000,5500, 6000, 6500, 7000, 7500,8000,8500,9000, 10000,12000, 14000];
+    x_ticks = [5000,5500, 6000, 6500, 7000, 7500,8000,8500,9000, 9500, 10000, 12000, 14000];
     x_domain = [0].concat(x_ticks).concat([x_max]);
 
 
@@ -74,12 +74,12 @@ function initialize_axis() {
         // .ticks(5);
         .tickValues(x_ticks);
 
-    svg.select("#x-axis").call(xAxis);
-    svg.select("#y-axis").call(yAxis);
+    svgOff.select("#x-axis").call(xAxis);
+    svgOff.select("#y-axis").call(yAxis);
 
     // use css to draw grid dash lines
     // add the X gridlines
-    svg.append("g")
+    svgOff.append("g")
         .attr("class", "grid")
         .attr("transform", "translate(0," + svg_height + ")")
         .call(
@@ -88,7 +88,7 @@ function initialize_axis() {
             .tickFormat("")
         );
     // add the Y gridlines
-    svg.append("g")
+    svgOff.append("g")
         .attr("class", "grid")
         .call(
             d3.axisLeft(yScale).tickValues(y_ticks)
@@ -100,7 +100,7 @@ function initialize_axis() {
 
 function initialize_titles() {
 
-    var title_1 = svg.append("text")
+    var title_1 = svgOff.append("text")
         .attr("x", 30)
         .attr("y", 30)
         .attr("font-family", "serif")
@@ -109,14 +109,14 @@ function initialize_titles() {
         .text("NFL Opponent Offensive Yards")
 
 
-    var title_2 = svg.append("text")
+    var title_2 = svgOff.append("text")
         .attr("x", 30)
         .attr("y", 50)
         .attr("font-family", "serif")
         .attr("font-size", "15px")
         .text("From 2010 To 2017")
 
-    var title_year = svg.append("text")
+    var title_year = svgOff.append("text")
         .attr("x", 280)
         .attr("y", 30)
         .attr("font-family", "serif")
@@ -124,7 +124,7 @@ function initialize_titles() {
         .attr("font-weight", "bold")
         .attr("id", "year_header");
 
-    var title_x_axis = svg.append("text")
+    var title_x_axis = svgOff.append("text")
         .attr("x", 130)
         .attr("y", 580)
         .attr("font-family", "serif")
@@ -147,7 +147,7 @@ function initialize_titles() {
     //     .attr("font-style", "italic")
     //     .text("(GDP/capita, PPP$ in ation adjusted, log scale)")
 
-    var title_y_axis = svg.append("text")
+    var title_y_axis = svgOff.append("text")
         .attr("x", -40)
         .attr("y", 450)
         .style("font-family", "serif")
@@ -164,10 +164,10 @@ function initialize_titles() {
     //     .attr("transform", "rotate(-90 -40,255)")
     //     .text("in years")
 
-    var title_year = svg.append("text")
+    var title_year = svgOff.append("text")
         .attr("x", 30)
         .attr("y", 140)
-        .attr("font-family", "'Varela Round', sans-serif") //'Roboto Mono', monospace //'Varela Round', sans-serif;
+        .attr("font-family", "'Arial', sans-serif") //'Roboto Mono', monospace //'Varela Round', sans-serif;
         .attr("font-size", "100px")
         .attr("font-weight", "bold")
         .attr("id", "year_middle")
