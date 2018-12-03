@@ -57,6 +57,14 @@ function loadData(error, data, rushingData, turnOverData, data1, data2, treeData
         // Convert numeric values to 'numbers'
     });
 
+    // console.log(rushingData);
+    rushingData.forEach(function(d) {
+        d.Wins = +d.Wins;
+        d.Loss = +d.Loss;
+        d.WL = +d.WL;
+    })
+    console.log(rushingData);
+
     //**********STACKED AREA CHART ********//
 
     pats_allData = data1;

@@ -93,6 +93,7 @@ Rushing.prototype.reSort = function(orderingType) {
     vis.data = vis.data.sort( function(a, b){
         return b[orderingType] - a[orderingType];
     })
+    console.log(vis.data);
     vis.svg.selectAll('.bar').remove();
     vis.svg.selectAll('.axis').remove();
     vis.svg.selectAll('.meanLine').remove();
@@ -167,6 +168,7 @@ Rushing.prototype.makeNFCTable = function() {
         .append("th")
         .on("click", function(d,i){
             createTableBody(d.key);
+            console.log(this.innerHTML);
             rushingBar.reSort(this.innerHTML);
         })
         .text(function(d){return d.key;})
@@ -356,7 +358,7 @@ Rushing.prototype.updateVis = function(){
         .attr("width", x1.bandwidth()*2.7)
         .attr("height", function(d) { return vis.height - y(d.value); })
         .attr('fill', function(d, i) {
-            console.log(d.Team)
+            // console.log(d.Team)
             if(d.playoffs == "TRUE" && d.city=="Seattle Seahawks"){
                 return 'url(#diagonalHatchSea)'
             }
@@ -444,10 +446,10 @@ Rushing.prototype.updateVis = function(){
     var rushingAverage = rushingSum/vis.data.length;
     var rushingLine = d3.line()
         .x(function(d, i) {
-            console.log(vis.data.length)
+            // console.log(vis.data.length)
 
             if(vis.data.length ==15) {
-                console.log(vis.data.length)
+                // console.log(vis.data.length)
                 return (i * (vis.width / vis.data.length + 5.5));
             }
             if(vis.data.length ==16) {
