@@ -316,7 +316,7 @@ Turnover.prototype.initVis = function() {
 
     vis.yAxis = d3.axisLeft(vis.y);
 
-    var shift=  50;
+    var shift=  vis.height + 20;
     vis.svg
         .append("text")
         // .attr("class", "treeLegend")
@@ -331,7 +331,7 @@ Turnover.prototype.initVis = function() {
         .append("text")
         // .attr("class", "treeLegend")
         .attr("x", vis.width/2 - 300)
-        .attr("y",  shift + 50)
+        .attr("y",  100)
         // .attr("class", "treeLegendLabel")
         .text("Best and Worst Performing Teams in Turnover Differential in 2015")
         .style("font-weight", "bold")
