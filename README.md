@@ -1,11 +1,12 @@
-#CS 171 Project
-##Team Title: What’s it take to make the playoffs?
-###Team Name: Scott’s Tots
-###Team Members:
-###Curtis Hsu
-###Ted Zhu
-###Ray An
-###Kelly Mcdougal
+CS 171 Project
+
+Team Title: What’s it take to make the playoffs?
+
+Team Name: Scott’s Tots
+
+Team Members:
+
+Curtis Hsu, Ted Zhu, Ray An, Kelly Mcdougal
 
 Code: 
 The html file that is our webpage is index.html. 
