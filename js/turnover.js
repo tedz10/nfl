@@ -440,7 +440,7 @@ Turnover.prototype.updateVis = function() {
             else
                 return "LightPink";
         })
-
+        .attr("class", "d3-tip")
         //.attr("fill", "Plum")
         .attr("x", function(d) { return vis.x(Math.min(0, d.Turnover_Differential)); })
 
@@ -455,7 +455,7 @@ Turnover.prototype.updateVis = function() {
                 .style("left", d3.event.pageX - 50 + "px")
                 .style("top", d3.event.pageY - 70 + "px")
                 .style("display", "inline-block")
-                .html((d.Teams) + "<br>"  + (d.Turnover_Differential));
+                .html("Team: " + (d.Teams) + "<br>"  + "Differential: " +(d.Turnover_Differential));
         })
         .on("mouseout", function(d){ tooltip.style("display", "none");})
 
